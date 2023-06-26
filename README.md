@@ -31,6 +31,25 @@ En Linux lo podes encontrar como php-cli en tu manejador de paquestes en ubuntu 
 - Clonar a tu maquina el repositorio
 - Ir al directorio y correr composer install
 
+### Instrucciones para docker
+Para los que no tengan la versión adecuada de PHP (es necesario tener instalado docker y docker-compose [docker](https://docs.docker.com)):
+
+Construir la imagen
+```bash
+docker-compose build
+```
+
+Ejecutar bash dentro del contenedor e instalar las dependencias
+```bash
+docker-compose run app bash
+composer install
+```
+
+Luego se puede utilizar se pueden correr los test dentro del contenedor.
+```bash
+docker-compose run app bash
+./vendor/bin/phpunit
+```
 
 ## Correr los tests
 
